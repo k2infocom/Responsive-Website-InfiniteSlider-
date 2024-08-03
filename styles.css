@@ -1,0 +1,392 @@
+@import url('https://fonts.googleapis.com/css2?family=Marcellus&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+    list-style: none;
+    text-decoration: none;
+
+    font-family: 'Poppins';
+}
+
+body {
+    background-color: #121212;
+}
+
+nav {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 8%;
+    height: 100px;
+    color: #fff;
+    z-index: 999;
+}
+
+.logo a {
+    font-size: 2rem;
+    font-weight: 800;
+    color: #fff;
+    font-family: 'Marcellus', serif;
+}
+
+.logo a span {
+    color: orangered;
+}
+
+
+.menu {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    background-color: rgba(255, 255, 255, 0.2);
+    padding: 5px 20px;
+    border-radius: 50px;
+}
+
+.menu li a {
+    font-size: 1.4rem;
+    font-weight: 400;
+    color: #fff;
+    transition: .3s;
+}
+
+.menu li a:hover {
+    color: aqua;
+}
+
+.social {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.social i {
+    width: 50px;
+    height: 50px;
+    border-radius: 100%;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    transition: .3s;
+    cursor: pointer;
+}
+
+.social i:hover {
+    background-color: #fff;
+    color: #000;
+}
+
+.bars i {
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.bars {
+    display: none;
+}
+
+/* HERO HEADER  */
+
+.overlay{
+    width: 350px;
+    height: 350px;
+    border-radius: 100%;
+    background: linear-gradient(50deg, rgba(255, 138, 48, 1) 0%, rgba(227, 255, 29, 1) 44%, rgba(0, 255, 158, 1) 100%);
+    position: absolute;
+    top: 28%;
+    left: 50%;
+    transform: translate(-50% , -50%);
+    opacity: 0.5;
+}
+
+.hero_header{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100%;
+    backdrop-filter: blur(10px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    gap: 20px;
+}
+
+.hero_content{
+    width: 100%;
+}
+
+.hero_content .hero_text{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    transform: translateY(50px);
+}
+
+.hero_content .hero_text h1{
+    font-size: 6rem;
+    width: 55%;
+    font-weight: 400;
+    text-align: center;
+    font-family: 'Marcellus', serif;
+}
+
+.btn{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: transparent;
+    width: 200px;
+    height: 50px;
+    border-radius: 50px;
+    padding: 0 35px;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    transition: .3s;
+    cursor: pointer;
+}
+
+.btn button{
+    background-color: transparent;
+    border: none;
+    color: #fff;
+    font-size: 1.5rem;
+    transition: .3s;
+    cursor: pointer;
+}
+.btn:hover{
+    background-color: #fff;
+    cursor: pointer;
+}
+.btn:hover button{
+    color: #000;
+}
+
+.arrow{
+    font-size: 1.5rem;
+    transition: .3s;
+    transform: rotate(0deg);
+}
+.btn:hover .arrow{
+    transform: rotate(180deg);
+    color: #000;
+}
+
+
+.slider {
+    height: 400px;
+    margin: auto;
+    width: 90%;
+    display: grid;
+    place-items: center;
+    overflow: hidden;
+    margin-top: 70px;
+    transform: translateY(30px);
+}
+
+.slide-track {
+    display: flex;
+    width: calc(350px * 20);
+    animation: scrolls 40s forwards infinite;
+    position: relative;
+}
+
+.slide {
+    height: 450px;
+    width: 500px;
+    display: flex;
+    align-items: center;
+    padding: 15px;
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+}
+
+@keyframes scrolls {
+    0% {
+        transform: translateX(0px);
+    }
+
+    100% {
+        transform: translateX(calc(-250px * 10));
+    }
+}
+
+.path1 {
+    position: absolute;
+    top: 0%;
+    left: 0;
+    width: 100vw;
+    height: 70px;
+}
+
+.path2 {
+    top: 90%;
+}
+
+.side_bar {
+    z-index: 99999;
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: none;
+}
+
+@keyframes Show {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+/* MQ */
+
+@media (max-width:1600px) {
+    .path1 {
+        top: 3%;
+    }
+
+    .path2 {
+        top: 85%;
+    }
+}
+
+@media (max-width:1200px) {
+    .hero_content .hero_text h1 {
+        font-size: 5rem;
+        width: 70%;
+    }
+}
+
+@media (max-width:900px) {
+    .hero_content .hero_text h1 {
+        font-size: 5rem;
+        width: 70%;
+    }
+}
+
+@media (max-width:768px) {
+    .bars {
+        display: block;
+    }
+
+    .hero_content .hero_text h1 {
+        font-size: 4.5rem;
+        width: 100%;
+    }
+
+    .hero_content .hero_text {
+        margin-top: 100px;
+    }
+
+    .menu {
+        display: none;
+    }
+
+    .side_bar .bars i {
+        font-size: 2rem;
+    }
+
+    .side_bar {
+        width: 50%;
+        color: #fff;
+        background-color: rgba(0, 0, 0, 0.5);
+        backdrop-filter: blur(10px);
+        height: 115%;
+        padding: 7%;
+        display: none;
+    }
+
+    .side_nav {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .side_bar_content {
+        margin: 50px 0;
+    }
+
+    .side_bar_menu {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+    }
+
+    .side_bar_menu li {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+        margin: 5px 0;
+    }
+
+    .side_bar_menu li a {
+        color: #fff;
+        font-size: 1.5rem;
+    }
+
+    .side_bar_menu li i {
+        font-size: 1.5rem;
+    }
+
+    .side_bar_menu li:hover a {
+        color: aqua;
+    }
+
+    .side_bar_menu li:hover i {
+        color: aqua;
+    }
+
+    .side_bar_menu li:hover {
+        border-color: aqua;
+    }
+
+    .side_images {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        margin-top: 50px;
+    }
+
+    .side_images .img {
+        width: 70px;
+        height: 70px;
+        margin: 10px;
+    }
+
+    .side_images .img img {
+        width: 100%;
+        height: 100%;
+    }
+
+    .show_sidebar {
+        display: block;
+        animation: Show 0.6s forwards linear;
+    }
+}
+
+@media (max-width:500px) {
+    .hero_content .hero_text h1{
+        font-size: 3.5rem;
+    }
+}
